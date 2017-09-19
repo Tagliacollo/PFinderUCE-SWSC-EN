@@ -174,7 +174,7 @@ def output_paths(dataset_path):
     dataset_name = os.path.basename(dataset_path).rstrip(".nex")
 
     repository_dir      = Path(dataset_path).parents[1]
-    processed_data_dir  = os.path.join(str(repository_dir), "processed_data")
+    processed_data_dir  = os.path.join(str(repository_dir), "PFinderUCE_output")
 
     output_path = os.path.join(processed_data_dir, dataset_name)
     

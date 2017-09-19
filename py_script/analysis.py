@@ -4,7 +4,7 @@ import os
 from time import asctime
 
 
-datasets = ['/Users/Tagliacollo/Google-Drive/00-research/research-projects/in-progress/VAT-PartitionUCE/raw-data/test.nex']
+datasets = ['/Volumes/VATagliacollo/GitHub/PFinderUCE-SWSC-EN/example/example_dataset.nex']
 
 
 for dataset_path in datasets:
