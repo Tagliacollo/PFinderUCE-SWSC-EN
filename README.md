@@ -45,33 +45,30 @@ If you don’t want to install with Anaconda, you can install Python 3.6.x and t
 
 ### Installing SWSC-EN
 
-To install SWSC-EN, 
+To install SWSC-EN:
 
-	1. Download the latest version of SWSC-EN from [here](https://github.com/Tagliacollo/PFinderUCE-SWSC-EN/blob/master/py_script.zip)
-	2. Double-click the .zip file, and it will automatically unzip. You will get a folder called something like ‘PFinderUCE-SWSC-EN’
-	3. Move it to wherever you want to store PFinderUCE-SWSC-EN (e.g. in /Applications)
+	1- Download the latest version of SWSC-EN from [here](https://github.com/Tagliacollo/PFinderUCE-SWSC-EN/blob/master/py_script.zip)
+	2- Double-click the .zip file, and it will automatically unzip. You will get a folder called something like ‘PFinderUCE-SWSC-EN’
+	3- Move it to wherever you want to store PFinderUCE-SWSC-EN (e.g. in /Applications)
 	
 
 ### Running SWSC-EN
 
 The instructions below describe how to run the `example/example_dataset.nex` using SWSC-EN method. This is a nexus DNA alignment with 15 concatenated UCEs  
-
-	1. Open Terminal (on most Macs, this is found in Applications/Utilities) 
-	2. In the Terminal, you need to tell the computer where to find Python, SWSC-EN, and your input files. The easiest way to do this is as follows:
-		a. Type “python“ followed by a space (remember, it needs to be python 3.6.x or higher)
-		b. Drag and drop the “analysis.py” file (which is in the PFinderUCE-SWSC-EN folder you just unzipped) onto the command prompt. The path to will be added automatically.
-		c. Type another space
-		d. Drag and drop the blue `example_dataset/example_dataset.nex` folder (in the PFinderUCE-SWSC-EN folder) onto the command prompt
-	3. Hit Enter/Return to run PFinderUCE-SWSC-EN
-
-
+	1- Open Terminal (on most Macs, this is found in Applications/Utilities) 
+	2- Type “python“ followed by a space (remember, it needs to be python 3.6.x or higher)
+	3- Drag and drop the “analysis.py” file (which is in the PFinderUCE-SWSC-EN folder you just unzipped) onto the command prompt.
+	4- Type another space
+	5- Drag and drop the blue `example/example_dataset.nex` folder (in the PFinderUCE-SWSC-EN folder) onto the command prompt
+	6- Hit Enter/Return to run PFinderUCE-SWSC-EN
 
 ## Input File
-SWSC-EN needs oonly a single input file, which is a concatenated nexus alignment (.nex) comprised of UCE markers and including charsets with the locations of the UCEs (example input is in the `/example_dataset` folder of this repository) .
+
+SWSC-EN needs only a single input file, which is a concatenated nexus alignment (.nex) comprised of UCE markers and including charsets with the locations of the UCEs (example input is in the `/example` folder of this repository) .
 
 
 ## Output Files
 
-All of the output is contained in a folder called `PFinderUCE_output` which appears within the folder created to store SWSC-EN (e.g. FinderUCE-SWSC-EN) . There are two output, which are a PartitionFinder 2 configuration file (.cfg) to be used as the input file for [PartitionFinder 2](https://academic.oup.com/mbe/article/34/3/772/2738784/PartitionFinder-2-New-Methods-for-Selecting), and a csv file (.csv) with values of entropy (SWSC-EN) for each site of the UCEs (example outputs are in the `/PFinderUCE_output/example_dataset` folder of this repository). 
+All of the output is contained in a folder called `PFinderUCE_output` which appears within the folder created to store SWSC-EN (e.g. FinderUCE-SWSC-EN). There are two output, which are a PartitionFinder 2 configuration file (.cfg) to be used as the input file for [PartitionFinder 2](https://academic.oup.com/mbe/article/34/3/772/2738784/PartitionFinder-2-New-Methods-for-Selecting), and a csv file (.csv) with values of entropy (SWSC-EN) for each site of the UCEs (example outputs are in the `/PFinderUCE_output/example` folder of this repository). 
 
 
