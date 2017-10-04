@@ -2,6 +2,8 @@
 
 The accuracy of phylogenetic inferences often depends on choosing an appropriate model of molecular evolution. In Tagliacollo & Lanfear (submitted), we evaluated the performance of two new partitioning methods for phylogenomics studies of UCES, and conclude that automatic selection of partitions through the SWSC-EN method considerably improves model-fit and parameter estimates. This repository contains scripts to run the SWSC-EN method on your own alignments. For more information about the method, please see the accompanying paper, and the [repository for replicating the analyses in that paper](https://github.com/Tagliacollo/PartitionUCE). 
 
+In brief, this method uses entropy to attempt to split each UCE into 3 parts - a middle part (which is usually quite conserved), and two flanking regions (which are typically more variable). This parts can then be used as input to e.g. PartitionFinder2, which can optimise the partitioning scheme by joining toether similar subsets (e.g. it is often the case that a lot of the central regions are better analysed together than separately). 
+
 # Quick Start
 
 1. Use Python 3.6.x or higher, with `biopython`, `numpy`, `pathlib2`, and `tqdm` installed.
@@ -11,6 +13,8 @@ The accuracy of phylogenetic inferences often depends on choosing an appropriate
 3. Do this: ```python SWSCEN.py input.nex output_folder```. 
 
 Where `input.nex` is your input file and `output_folder` is where you want to store your output. If you leave the final argument out, the output will be put in the same folder as the `input.nex` file.
+
+4. Use the .cfg file as input to PartitionFinder2 to optimise the partitioning scheme.
 
 # More details on installing and running the script
 
