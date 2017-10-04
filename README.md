@@ -21,46 +21,49 @@ SWSC-EN needs Python 3.6.x or higher (but not 2.x!) and some additional librarie
 
 Follow the link for the Python 3.6 graphical installer, then open it and follow the prompts. You need to make sure that you have version 4.4.0 or higher of the Anaconda Python distribution. In addition, install the following dependencies:
 
-[collections](https://docs.python.org/3/library/collections.html)
-[io](https://docs.python.org/3/library/io.html)
-[itertools](https://docs.python.org/3/library/itertools.html) 
-[os](https://docs.python.org/3/library/os.html)
-[subprocess](https://docs.python.org/3/library/subprocess.html)
-[time](https://docs.python.org/3/library/time.html) 
+[biopython](https://pypi.python.org/pypi/biopython)
 
-If you don’t want to install with Anaconda, you can install Python 3.6.x and then install the following dependencies:
-
-[Bio](https://pypi.python.org/pypi/biopython)
-[collections](https://docs.python.org/3/library/collections.html)
-[io](https://docs.python.org/3/library/io.html) 
-[itertools](https://docs.python.org/3/library/itertools.html) 
-[math](https://docs.python.org/3/library/math.html) 
 [numpy](https://pypi.python.org/pypi/numpy)
-[os](https://docs.python.org/3/library/os.html)
+
 [pathlib2](https://pypi.python.org/pypi/pathlib2/) 
-[subprocess](https://docs.python.org/3/library/subprocess.html)
-[time](https://docs.python.org/3/library/time.html)
+
 [tqdm](https://pypi.python.org/pypi/tqdm)
 
+which you can do with the following commands after installing Anaconda Python 3.6:
+
+```
+conda install biopython
+conda install numpy
+conda install pathlib2
+conda install tqdm
+```
 
 ### Installing SWSC-EN
 
 To install SWSC-EN:
 
-	1- Download the latest version of SWSC-EN from [here](https://github.com/Tagliacollo/PFinderUCE-SWSC-EN/blob/master/py_script.zip)
-	2- Double-click the .zip file, and it will automatically unzip. You will get a folder called something like ‘PFinderUCE-SWSC-EN’
-	3- Move it to wherever you want to store PFinderUCE-SWSC-EN (e.g. in /Applications)
+1. Download the latest version of SWSC-EN repository [here](https://github.com/Tagliacollo/PFinderUCE-SWSC-EN/archive/master.zip)
+
+2. Double-click the .zip file, and it will automatically unzip. You will get a folder called something like ‘PFinderUCE-SWSC-EN’
+
+3. Move it to wherever you want to store PFinderUCE-SWSC-EN (e.g. in /Applications)
 	
 
 ### Running SWSC-EN
 
-The instructions below describe how to run the `example/example_dataset.nex` using SWSC-EN method. This is a nexus DNA alignment with 15 concatenated UCEs  
-	1- Open Terminal (on most Macs, this is found in Applications/Utilities) 
-	2- Type “python“ followed by a space (remember, it needs to be python 3.6.x or higher)
-	3- Drag and drop the “analysis.py” file (which is in the PFinderUCE-SWSC-EN folder you just unzipped) onto the command prompt.
-	4- Type another space
-	5- Drag and drop the blue `example/example_dataset.nex` folder (in the PFinderUCE-SWSC-EN folder) onto the command prompt
-	6- Hit Enter/Return to run PFinderUCE-SWSC-EN
+The instructions below describe how to run the `example/example_dataset.nex` using SWSC-EN method. This is a nexus DNA alignment with 15 concatenated UCEs 
+
+1. Open Terminal (on most Macs, this is found in Applications/Utilities) 
+
+2. Type “python“ followed by a space (remember, it needs to be python 3.6.x or higher)
+
+3. Drag and drop the “analysis.py” file (which is in the PFinderUCE-SWSC-EN folder you just unzipped) onto the command prompt.
+
+4. Type another space
+
+5. Drag and drop the blue `example/example_dataset.nex` folder (in the PFinderUCE-SWSC-EN folder) onto the command prompt
+
+6. Hit Enter/Return to run PFinderUCE-SWSC-EN
 
 ## Input File
 
@@ -69,6 +72,6 @@ SWSC-EN needs only a single input file, which is a concatenated nexus alignment 
 
 ## Output Files
 
-All of the output is contained in a folder called `PFinderUCE_output` which appears within the folder created to store SWSC-EN (e.g. FinderUCE-SWSC-EN). There are two output, which are a PartitionFinder 2 configuration file (.cfg) to be used as the input file for [PartitionFinder 2](https://academic.oup.com/mbe/article/34/3/772/2738784/PartitionFinder-2-New-Methods-for-Selecting), and a csv file (.csv) with values of entropy (SWSC-EN) for each site of the UCEs (example outputs are in the `/PFinderUCE_output/example` folder of this repository). 
+All of the output is contained in a folder called `PFinderUCE_output` which appears within the folder created to store SWSC-EN (e.g. FinderUCE-SWSC-EN). There are two outputs, which are a PartitionFinder 2 configuration file (.cfg) to be used as the input file for [PartitionFinder 2](https://academic.oup.com/mbe/article/34/3/772/2738784/PartitionFinder-2-New-Methods-for-Selecting), and a csv file (.csv) with values of entropy (SWSC-EN) for each site of the UCEs (example outputs are in the `/PFinderUCE_output/example` folder of this repository). 
 
 
