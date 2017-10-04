@@ -1,19 +1,16 @@
 # Partitioning methods for phylogenomic studies of UCE markers 
 
-The accuracy of phylogenetic inferences often depends on choosing an appropriate model of molecular evolution. In Tagliacollo & Lanfear (submitted), we evaluated the performance of two new partitioning methods for phylogenomics studies of UCES, and conclude that automatic selection of partitions through the SWSC-EN method considerably improve model-fit and parameter estimates. This new method is computational efficient and a viable alternative to partitioning large UCE alignments. Below we describe the SWSC-EN method and explains how to run it on personal computers  
+The accuracy of phylogenetic inferences often depends on choosing an appropriate model of molecular evolution. In Tagliacollo & Lanfear (submitted), we evaluated the performance of two new partitioning methods for phylogenomics studies of UCES, and conclude that automatic selection of partitions through the SWSC-EN method considerably improves model-fit and parameter estimates. This repository contains scripts to run the SWSC-EN method on your own alignments. For more information about the method, please see the accompanying paper, and the [repository for replicating the analyses in that paper](https://github.com/Tagliacollo/PartitionUCE). 
 
+# Quick Start
 
-**Partitioning method: _Sliding-Window Site Characteristics_** (SWSC-EN)
+Use Python 3.6.x or higher
 
-The SWSC-EN partitioning method uses a sliding-window approach and entropy rates of molecular evolution across DNA sites to automatically select partitions that account for heterogeneity in rates and patterns of molecular evolution within UCE alignments. The SWSC-EN method is graphically summarized below. For further information, see [Tagliacollo & Lanfear, 2018](www.paper.com.br) 
+```python SWSCEN.py input.nex output_folder```
 
-![SWSC-EN](/png/Figure2.png)
+# Installation
 
-The diagram above includes three hypothetical alignments: UCE-1 (green), UCE-2 (yellow), and UCE-3 (blue). The alignments include the same patterns of molecular evolution (i.e. entropies) as seen in the UCE markers. The SWSC-EN algorithm includes three steps. First, it proposes all combinations of three-window models in the alignments. It delimitates windows by locating every conceivable pairs of nucleotide sites in the alignments. Second, it counts nucleotide proportions and estimates site-wise rates of entropies. Third, it calculates the Sum of Squared Errors (SSE) statistics across windows and sum them up to obtain the sum of SSEs for every three data block model. The SWSC-EN algorithm selects the best models by minimizing the squared residuals among three windows. For further information, see [Tagliacollo & Lanfear, 2018](www.paper.com.br)
-
-# Installing and Running Python 3.6.x and SWSC-EN
-
-### Install Python and its dependencies
+## 1. Install Python and its dependencies
 
 SWSC-EN needs Python 3.6.x or higher (but not 2.x!) and some additional libraries to run on personal computers. The simplest way to set this up is to install the Anaconda Python distribution, which can be downloaded from here:
 
@@ -38,40 +35,43 @@ conda install pathlib2
 conda install tqdm
 ```
 
-### Installing SWSC-EN
-
-To install SWSC-EN:
+## 2. Download SWSC-EN
 
 1. Download the latest version of SWSC-EN repository [here](https://github.com/Tagliacollo/PFinderUCE-SWSC-EN/archive/master.zip)
 
-2. Double-click the .zip file, and it will automatically unzip. You will get a folder called something like ‘PFinderUCE-SWSC-EN’
+2. Double-click the .zip file, and it will automatically unzip. You will get a folder called 'PFinderUCE-SWSC-EN-master'
 
 3. Move it to wherever you want to store PFinderUCE-SWSC-EN (e.g. in /Applications)
 	
+## 3. Run SWSC-EN
 
-### Running SWSC-EN
+The instructions below describe how to run the `example_input/example_dataset.nex` using SWSC-EN method. This is a nexus DNA alignment with 15 concatenated UCEs 
 
-The instructions below describe how to run the `example/example_dataset.nex` using SWSC-EN method. This is a nexus DNA alignment with 15 concatenated UCEs 
-
-1. Open Terminal (on most Macs, this is found in Applications/Utilities) 
+1. Open Terminal (on Macs), or a command prompt (on windows) 
 
 2. Type “python“ followed by a space (remember, it needs to be python 3.6.x or higher)
 
-3. Drag and drop the “analysis.py” file (which is in the PFinderUCE-SWSC-EN folder you just unzipped) onto the command prompt.
+3. Drag and drop the `SWSCEN.py` script onto your terminal or commmand prompt (the script is here `PFinderUCE-SWSC-EN-master/py_script/SWSCEN.py`)
 
 4. Type another space
 
-5. Drag and drop the blue `example/example_dataset.nex` folder (in the PFinderUCE-SWSC-EN folder) onto the command prompt
+5. Drag and drop the input file `example_input/example_dataset.nex` onto your terminal
 
 6. Hit Enter/Return to run PFinderUCE-SWSC-EN
 
 ## Input File
 
-SWSC-EN needs only a single input file, which is a concatenated nexus alignment (.nex) comprised of UCE markers and including charsets with the locations of the UCEs (example input is in the `/example` folder of this repository) .
+SWSC-EN needs only a single input file, which is a concatenated nexus alignment (.nex) comprised of UCE markers and including charsets with the locations of the UCEs (example input is in the `/example_input` folder of this repository).
 
 
 ## Output Files
 
-All of the output is contained in a folder called `PFinderUCE_output` which appears within the folder created to store SWSC-EN (e.g. FinderUCE-SWSC-EN). There are two outputs, which are a PartitionFinder 2 configuration file (.cfg) to be used as the input file for [PartitionFinder 2](https://academic.oup.com/mbe/article/34/3/772/2738784/PartitionFinder-2-New-Methods-for-Selecting), and a csv file (.csv) with values of entropy (SWSC-EN) for each site of the UCEs (example outputs are in the `/PFinderUCE_output/example` folder of this repository). 
+By default the output is stored in the same folder as the input file. If you want to change this, you can just add another argument at the commandline, defining the output folder you'd like to use.
 
+There are two outputs: 
 
+1. A PartitionFinder 2 configuration file (.cfg) to be used as the input file for [PartitionFinder 2](https://academic.oup.com/mbe/article/34/3/772/2738784/PartitionFinder-2-New-Methods-for-Selecting)
+
+2. A csv file (.csv) with values of entropy (SWSC-EN) for each site of the UCEs. 
+
+Example output is provided in the ```example_output/``` folder.
