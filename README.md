@@ -1,14 +1,18 @@
-# Partitioning methods for phylogenomic studies of UCE markers 
+# Entropy-based automatic partitioning of UCE alignments 
 
 The accuracy of phylogenetic inferences often depends on choosing an appropriate model of molecular evolution. In Tagliacollo & Lanfear (submitted), we evaluated the performance of two new partitioning methods for phylogenomics studies of UCES, and conclude that automatic selection of partitions through the SWSC-EN method considerably improves model-fit and parameter estimates. This repository contains scripts to run the SWSC-EN method on your own alignments. For more information about the method, please see the accompanying paper, and the [repository for replicating the analyses in that paper](https://github.com/Tagliacollo/PartitionUCE). 
 
 # Quick Start
 
-Use Python 3.6.x or higher
+1. Use Python 3.6.x or higher, with `biopython`, `numpy`, `pathlib2`, and `tqdm` installed.
 
-```python SWSCEN.py input.nex output_folder```
+2. Your input file should be a single .nex file with each UCE defined as a CHARSET (see `example_input`)
 
-# Installation
+3. Do this: ```python SWSCEN.py input.nex output_folder```. 
+
+Where `input.nex` is your input file and `output_folder` is where you want to store your output. If you leave the final argument out, the output will be put in the same folder as the `input.nex` file.
+
+# More details on installing and running the script
 
 ## 1. Install Python and its dependencies
 
