@@ -12,7 +12,7 @@ In brief, this method uses entropy to attempt to split each UCE into 3 parts - a
 
 3. Do this: ```python SWSCEN.py input.nex output_folder```. 
 
-Where `input.nex` is your input file and `output_folder` is where you want to store your output. If you leave the final argument out, the output will be put in the same folder as the `input.nex` file.
+Where `input.nex` is the full file path to your input file and `output_folder` is the full file path to where you want to store your output. If you leave the final argument out, the output will be put in the same folder as the `input.nex` file.
 
 4. Use the .cfg file as input to PartitionFinder2 to optimise the partitioning scheme.
 
@@ -63,7 +63,7 @@ The instructions below describe how to run the `example_input/example_dataset.ne
 
 4. Type another space
 
-5. Drag and drop the input file `example_input/example_dataset.nex` onto your terminal
+5. Drag and drop the input file `example_input/example_dataset.nex` onto your terminal (note, you need to provide the full filepath)
 
 6. Hit Enter/Return to run PFinderUCE-SWSC-EN
 
